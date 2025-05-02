@@ -1,0 +1,254 @@
+ejercicio 1:
+XYZ” es una empresa dedicada a ofrecer banquetes; sus tarifas son las siguientes:
+#  El costo de platillo por persona es de $95.00, pero si el número de personas es
+#mayor a 200 pero menor o igual a 300, el costo es de $85.00. Para más de 300 personas el
+#  costo por platillo es de $75.00. Se requiere un algoritmo que ayude a
+#determinar el presupuesto que se debe presentar a los clientes que deseen realizar un evento.
+
+# Declaración de variables
+numero_personas =0
+costo_por_persona = 0
+presupuesto_total = 0
+numero_personas= int(input("Ingrese el número de personas que asistirán al evento: "))
+
+# Determinación del costo por persona según la cantidad de personas
+if numero_personas > 300:
+    costo_por_persona = 75.00
+elif numero_personas > 200:
+    costo_por_persona = 85.00
+else:
+    costo_por_persona = 95.00
+
+# Cálculo del presupuesto total
+presupuesto_total = numero_personas * costo_por_persona
+
+# Mostrar resultado
+print("El costo por persona es:" ,costo_por_persona)
+print("El presupuesto total para el evento es:" ,presupuesto_total)
+
+ejercicio 2:
+La asociación de vinicultores tiene como política fijar un precio inicial al kilo de uva, 
+# la cual se clasifica en tipos A y B, y además en tamaños 1 y 2. Cuando se realiza la venta del producto,
+#  ésta es de un solo tipo y tamaño, se requiere determinar cuánto recibirá un productor por la uva que
+#  entrega en un embarque,considerando lo siguiente:
+#Si es de tipo A, se le cargan 20¢ al precio inicial cuando es de tamaño 1; y 30¢ si es de tamaño 2.
+#Si es de tipo B, se rebajan 30¢ cuando es de tamaño 1, y 50¢ cuando es de tamaño 2. Realice un algoritmo
+#  para determinar la ganancia obtenida
+#creacion de variables
+tipo_uva=0
+tamano_uva=0
+precio_inicial=0
+kilos=0
+# Entrada de datos
+tipo_uva = input("Ingrese el tipo de uva (A o B): ").upper()
+tamano_uva = int(input("Ingrese el tamaño de la uva (1 o 2): "))
+precio_inicial = int(input("Ingrese el precio inicial por kilo de uva: "))
+kilos = int(input("Ingrese la cantidad de kilos entregados: "))
+# Determinar el ajuste según el tipo y tamaño de la uva
+precio = 0
+if tipo_uva == "A":
+    if tamano_uva == 1:
+        precio = 0.20
+    elif tamano_uva == 2:
+        precio = 0.30
+elif tipo_uva == "B":
+    if tamano_uva == 1:
+        precio = -0.30
+    elif tamano_uva == 2:
+        precio = -0.50
+else:
+    print("Tipo de uva inválido.")
+# Calcular el precio final por kilo
+precio_final = precio_inicial + precio
+# Calcular la ganancia total
+ganancia = precio_final * kilos
+# Mostrar el resultado
+print("Precio final por kilo: ",precio_final)
+print("Ganancia total del productor: ",ganancia)
+
+ejercicio 3:
+El director de una escuela está organizando un viaje de estudios, y requiere determinar cuánto debe 
+# cobrar a cada alumno y cuánto debe pagar a la compañía de viajes por el servicio. La forma de cobrar es 
+# la siguiente: si son 100 alumnos o más, el costo por cada alumno es de $65.00; de 50 a 99 alumnos,
+#  el costo es de$70.00, de 30 a 49, de $95.00, y si son menos de 30, el costo de la renta del autobús 
+# es de $4000.00, sin importar el número de alumnos. Realice un algoritmo que permita determinar el pago
+# a la compañía de autobuses y lo que debe pagar cada alumno por el viaje.
+# Inicializar variables
+alumnos=0
+costo_por_alumno = 0
+pago_total = 0
+# Entrada de datos
+alumnos = int(input("Ingrese el número de alumnos que van al viaje: "))
+# Determinar el costo según el número de alumnos
+if alumnos >= 100:
+    costo_por_alumno = 65.00
+    pago_total = alumnos * costo_por_alumno
+elif alumnos >= 50:
+    costo_por_alumno = 70.00
+    pago_total = alumnos * costo_por_alumno
+elif alumnos >= 30:
+    costo_por_alumno = 95.00
+    pago_total = alumnos * costo_por_alumno
+else:
+    pago_total = 4000.00
+    costo_por_alumno = pago_total / alumnos
+
+# Mostrar resultados
+print("Pago total a la compañía de autobuses: ",pago_total)
+print("Cada alumno debe pagar: ",costo_por_alumno)
+
+ejercicio 4:
+Realizar un programa que permita ingresar el valor de 2 exámenes, presentar un mensaje de “aceptado”, 
+# si examen 1 es mayor o igual que 90 o examen 2 es mayor o igual que 90, caso contrario, presentar
+#  un mensaje de “rechazado”.
+#declarar la variables
+examen1=0
+examen2=0
+#Entrada de datos
+examen1 = int(input("Ingrese la nota del Examen 1: "))
+examen2 = int(input("Ingrese la nota del Examen 2: "))
+#verificamos 
+if examen1 >= 90 or examen2 >= 90:
+    print("Aceptado")
+else:
+    print("Rechazado")
+
+ejercicio 5:
+Ingresar por teclado 3 variables numéricas, verificar cual es la mayor y presentarla por pantalla.
+# Ingreso de datos
+num1 = int(input("Ingrese el primer número: "))
+num2 =int(input("Ingrese el segundo número: "))
+num3 = int(input("Ingrese el tercer número: "))
+
+# Comparaciones para encontrar el mayor
+if num1 >= num2 and num1 >= num3:
+    mayor = num1
+elif num2 >= num1 and num2 >= num3:
+    mayor = num2
+else:
+    mayor = num3
+
+# Mostrar resultado
+print("El número mayor es: ",mayor)
+
+ejercicio 6:
+Pida al usuario ingresar la edad y el sexo, para que la computadora le indique si ya puede jubilarse.
+#  Tome en cuenta que un Hombre se puede jubilar cuando tenga 60 años o más, en cambio,
+# una mujer se jubilará si tiene más de 54 años.
+# Ingreso de datos
+edad = int(input("Ingrese su edad: "))
+sexo = input("Ingrese su sexo (H para hombre, M para mujer): ").upper()
+
+# Verificación de jubilación
+puede_jubilarse = False
+
+if sexo == "H":
+    if edad >= 60:
+        puede_jubilarse = True
+elif sexo == "M":
+    if edad > 54:
+        puede_jubilarse = True
+
+# Resultado
+if puede_jubilarse:
+    print("Puede jubilarse.")
+else:
+    print("No puede jubilarse aún.")
+
+ejercicio 7:
+Permita calcular el total a pagar por la compra de N camisas. Si se compran entre 1 a 4 camisas se
+#  aplica un descuento del 10%, si se compra una cantidad comprendida entre 5 y 8 camisas se aplica
+#  un descuento del 15% y si se compran cantidades mayores, se aplica un descuento del 20%
+#  sobre el total de la compra.Debe imprimirse en pantalla la compra final sin descuento,
+#  monto del descuento y la compra con descuento.
+# Ingreso de datos
+cantidad = int(input("Ingrese la cantidad de camisas: "))
+precio_unitario = int(input("Ingrese el precio por camisa: "))
+
+# Cálculos
+total_sin_descuento = cantidad * precio_unitario
+descuento = 0.0
+
+if cantidad >= 1 and cantidad <= 4:
+    descuento = 0.10
+elif cantidad >= 5 and cantidad <= 8:
+    descuento = 0.15
+elif cantidad > 8:
+    descuento = 0.20
+
+monto_descuento = total_sin_descuento * descuento
+total_con_descuento = total_sin_descuento - monto_descuento
+
+# Resultados
+print("Total sin descuento: ",total_sin_descuento)
+print("Monto del descuento: ",monto_descuento)
+print("Total con descuento: ",total_con_descuento)
+
+ejercicio 8:
+Realizar un diagrama de flujo que permita verificar la edad exacta de una persona, en años, meses y días,
+#  y presentar por pantalla, para lo cual debe de permitir ingresar por teclado la fecha actual 
+# y la fecha de nacimiento de la persona.
+# Ingreso de fecha actual
+dia_act = int(input("Ingrese el día actual: "))
+mes_act = int(input("Ingrese el mes actual: "))
+año_act = int(input("Ingrese el año actual: "))
+# Ingreso de fecha de nacimiento
+dia_nac = int(input("Ingrese el día de nacimiento: "))
+mes_nac = int(input("Ingrese el mes de nacimiento: "))
+año_nac = int(input("Ingrese el año de nacimiento: "))
+# Inicialización de variables
+años = año_act - año_nac
+meses = mes_act - mes_nac
+días = dia_act - dia_nac
+# Ajustes si el día actual es menor que el de nacimiento
+if días < 0:
+    meses -= 1
+    días += 30  # aproximación de 30 días por mes
+# Ajustes si el mes actual es menor que el de nacimiento
+if meses < 0:
+    años -= 1
+    meses += 12
+# Mostrar resultado
+print("Edad exacta:")
+print("Años:", años)
+print("Meses:", meses)
+print("Días:", días)
+
+ejercicio 9:
+#Realizar un algoritmo que me permita ingresar por teclado 3 valores, no permitir el ingreso de números 
+# iguales,luego promediarlos, presentar el número menor y el promedio.
+# Ingreso de datos con validación
+a = int(input("Ingrese el primer número: "))
+b = int(input("Ingrese el segundo número: "))
+while b == a:
+    print("Debe ingresar un número diferente.")
+    b = int(input("Ingrese el segundo número nuevamente: "))
+c = int(input("Ingrese el tercer número: "))
+while c == a or c == b:
+    print("Debe ingresar un número diferente.")
+    c = int(input("Ingrese el tercer número nuevamente: "))
+# Cálculo del promedio
+promedio = (a + b + c) / 3
+# Determinar el menor sin usar min()
+if a < b and a < c:
+    menor = a
+elif b < a and b < c:
+    menor = b
+else:
+    menor = c
+# Mostrar resultados
+print("El número menor es: ",menor)
+print("El promedio es: ",promedio)
+
+ejercicio 10:
+Realizar un programa que me permita presentar por pantalla los números múltiplos de 4,
+# menores al valor ingresado.
+# Ingreso de datos
+# Ingreso de datos
+valor = int(input("Ingresa un número entero: "))
+
+print("Múltiplos de 4 menores a: ",valor)
+
+# Proceso y salida
+for i in range(4, valor, 4):
+    print(i)
